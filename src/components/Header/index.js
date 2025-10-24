@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../../assets/images/logo.png';
 import Button from '@mui/material/Button';
@@ -9,11 +10,45 @@ import { MdDarkMode } from "react-icons/md";
 import { IoCartOutline } from "react-icons/io5";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { FaRegBell } from "react-icons/fa6";
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Tooltip from '@mui/material/Tooltip';
+import PersonAdd from '@mui/icons-material/PersonAdd';
+import Settings from '@mui/icons-material/Settings';
+import Logout from '@mui/icons-material/Logout';
+import Avatar from '@mui/material/Avatar';
+import { IoShieldHalfSharp } from "react-icons/io5";
+
+
 
 
 
 
 const Header = () => {
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const openMyAcc = Boolean(anchorEl);
+    const handleOpenMyAccDr = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleCloseMyAccDr = () => {
+        setAnchorEl(null);
+    };
+
+    const [isOpennotificationDrop, setisOpennotificationDrop] = useState(false);
+    const openNotifications = Boolean(isOpennotificationDrop);
+    const handleisOpennotificationDrop = () =>{
+        setisOpennotificationDrop(true);
+    };
+    const handleClosenotificationDrop = () => {
+        setisOpennotificationDrop(false);
+    }
+
+
     return (
         <>
             <header className="d-flex align-items-center">
@@ -37,12 +72,44 @@ const Header = () => {
                         <div className="col-sm-7 d-flex align-items-center justify-content-end part3 pl-4">
                             <Button className="rounded-circle mr-3"><MdOutlineLightMode/></Button>
                             <Button className="rounded-circle mr-3"><IoCartOutline/></Button>
+                            
                             <Button className="rounded-circle mr-3"><MdOutlineMailOutline/></Button>
-                            <Button className="rounded-circle mr-3"><FaRegBell/></Button>
-
+                            
+                            <div className=" dropDownWrapper position-relative">
+                                <Button className="rounded-circle mr-3"
+                                onClick={handleisOpennotificationDrop}
+                                >
+                                    <FaRegBell/>
+                                </Button>
+                                <Menu
+                                    anchorEl={isOpennotificationDrop}
+                                    className="notifications dropdown_list"
+                                    id="notifications"
+                                    open={openNotifications}
+                                    onClose={handleClosenotificationDrop}
+                                    onClick={handleClosenotificationDrop}
+                                    transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                                    anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                                >
+                                    <div className='head pl-3 pb-2'>
+                                        <h4>Orders (12)</h4>
+                                    </div>
+                                    <Divider className="mb-3"/>
+                                    <MenuItem onClick={handleClosenotificationDrop}>
+                                        <div className="d-flex align-items-center">
+                                            <span className="rounded-circle">
+                                                <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp">
+                                                </img>
+                                            </span>
+                                        </div>
+                                    </MenuItem>
+                                </Menu>
+                            </div>
 
                             <div className="myAccWrapper">
-                                <Button className="myAcc d-flex align-items-center">
+                                <Button className="myAcc d-flex align-items-center"
+                                onClick={handleOpenMyAccDr}
+                                >
                                     <div className="userImg">
                                         <span className="rounded-circle">
                                             <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp">
@@ -57,6 +124,34 @@ const Header = () => {
                                     </div>
 
                                 </Button>
+                                <Menu
+                                anchorEl={anchorEl}
+                                id="account-menu"
+                                open={openMyAcc}
+                                onClose={handleCloseMyAccDr}
+                                onClick={handleCloseMyAccDr}
+                                transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                                anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                            >
+                                <MenuItem onClick={handleCloseMyAccDr}>
+                                <ListItemIcon>
+                                    <PersonAdd fontSize="small" />
+                                </ListItemIcon>
+                                My Account
+                                </MenuItem>
+                                <MenuItem onClick={handleCloseMyAccDr}>
+                                <ListItemIcon>
+                                    <IoShieldHalfSharp />
+                                </ListItemIcon>
+                                Reset Password
+                                </MenuItem>
+                                <MenuItem onClick={handleCloseMyAccDr}>
+                                <ListItemIcon>
+                                    <Logout fontSize="small" />
+                                </ListItemIcon>
+                                Logout
+                                </MenuItem>
+                                </Menu>
                             </div>
                         </div>
                     </div>

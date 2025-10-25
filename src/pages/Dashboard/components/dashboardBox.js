@@ -1,9 +1,27 @@
-import { HiDotsVertical } from "react-icons/hi";
+
 import Button from '@mui/material/Button';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { useState } from "react";
+import { IoIosTimer } from "react-icons/io";
+
 
 const DashboardBox = (props) =>{
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+
+    const ITEM_HEIGHT = 48;
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
     return (
         <>
@@ -39,9 +57,51 @@ const DashboardBox = (props) =>{
 
                 <div className="d-flex align-items-center w-100 bottomEle">
                     <h6 className="text-white mb-0 mt-0">Last Month</h6>
-                    <Button className="ml-auto toggleIcon"><HiDotsVertical/></Button>
+                    <Button className="ml-auto toggleIcon">
+                        <div>
+                            <IconButton
+                                aria-label="more"
+                                id="long-button"
+                                aria-controls={open ? 'long-menu' : undefined}
+                                aria-expanded={open ? 'true' : undefined}
+                                aria-haspopup="true"
+                                onClick={handleClick}
+                            >
+                                <MoreVertIcon />
+                            </IconButton>
+                            <Menu
+                                className="dropdown_menu"
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleClose}
+                                slotProps={{
+                                paper: {
+                                    style: {
+                                    maxHeight: ITEM_HEIGHT * 4.5,
+                                    width: '20ch',
+                                    },
+                                },
+                                list: {
+                                    'aria-labelledby': 'long-button',
+                                },
+                                }}
+                            >
+                                <MenuItem onClick={handleClose}>
+                                    <IoIosTimer/>Last Day    
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <IoIosTimer/>Last Week
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <IoIosTimer/>Last Month
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <IoIosTimer/>Last Year
+                                </MenuItem> 
+                            </Menu>
+                        </div>
+                    </Button>
                 </div>
-
             </Button>
         </>
     )

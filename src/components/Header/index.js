@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import logo from '../../assets/images/logo.png';
 import Button from '@mui/material/Button';
 import { MdOutlineMenuOpen } from "react-icons/md";
-import { MdOutlineMenu } from "react-icons/md";
 import SearchBox from "../SearchBox";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
@@ -14,13 +13,8 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
-import Avatar from '@mui/material/Avatar';
 import { IoShieldHalfSharp } from "react-icons/io5";
 
 
@@ -91,18 +85,207 @@ const Header = () => {
                                     transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                                     anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                                 >
-                                    <div className='head pl-3 pb-2'>
+                                    <div className='head pl-3 pb-0'>
                                         <h4>Orders (12)</h4>
                                     </div>
-                                    <Divider className="mb-3"/>
-                                    <MenuItem onClick={handleClosenotificationDrop}>
-                                        <div className="d-flex align-items-center">
-                                            <span className="rounded-circle">
-                                                <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp">
-                                                </img>
-                                            </span>
-                                        </div>
-                                    </MenuItem>
+                                    <Divider className="mb-1"/>
+                                    <div className="scroll">
+                                        <MenuItem onClick={handleClosenotificationDrop}>
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                    <span className="rounded-circle">
+                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp">
+                                                        </img>
+                                                    </span>
+                                                </div>
+                                                </div>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul </b>
+                                                            added to his favorite list
+                                                            <b> Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                        <MenuItem onClick={handleClosenotificationDrop}>
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                    <span className="rounded-circle">
+                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp">
+                                                        </img>
+                                                    </span>
+                                                </div>
+                                                </div>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul </b>
+                                                            added to his favorite list
+                                                            <b> Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                        <MenuItem onClick={handleClosenotificationDrop}>
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                    <span className="rounded-circle">
+                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp">
+                                                        </img>
+                                                    </span>
+                                                </div>
+                                                </div>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul </b>
+                                                            added to his favorite list
+                                                            <b> Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                        <MenuItem onClick={handleClosenotificationDrop}>
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                    <span className="rounded-circle">
+                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp">
+                                                        </img>
+                                                    </span>
+                                                </div>
+                                                </div>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul </b>
+                                                            added to his favorite list
+                                                            <b> Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                        <MenuItem onClick={handleClosenotificationDrop}>
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                    <span className="rounded-circle">
+                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp">
+                                                        </img>
+                                                    </span>
+                                                </div>
+                                                </div>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul </b>
+                                                            added to his favorite list
+                                                            <b> Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                        <MenuItem onClick={handleClosenotificationDrop}>
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                    <span className="rounded-circle">
+                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp">
+                                                        </img>
+                                                    </span>
+                                                </div>
+                                                </div>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul </b>
+                                                            added to his favorite list
+                                                            <b> Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                        <MenuItem onClick={handleClosenotificationDrop}>
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                    <span className="rounded-circle">
+                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp">
+                                                        </img>
+                                                    </span>
+                                                </div>
+                                                </div>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul </b>
+                                                            added to his favorite list
+                                                            <b> Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                        <MenuItem onClick={handleClosenotificationDrop}>
+                                            <div className="d-flex">
+                                                <div>
+                                                    <div className="userImg">
+                                                    <span className="rounded-circle">
+                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp">
+                                                        </img>
+                                                    </span>
+                                                </div>
+                                                </div>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul </b>
+                                                            added to his favorite list
+                                                            <b> Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">
+                                                        few seconds ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </MenuItem>
+                                    </div>
+                                    <div className="pl-3 pr-3 pt-2 pb-1 w-100">
+                                        <Button className="btn-blue w-100">View all notifications</Button>
+                                    </div>
                                 </Menu>
                             </div>
 

@@ -10,10 +10,10 @@ import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { IoMdLogOut } from "react-icons/io";
 
-
 const Sidebar = () =>{
     const [activeTab, setActiveTab] = useState(0);
     const [isToggleSubmenu, setIsToggleSubmenu] = useState(false);
+
     const isOpenSubmenu = (index) =>{
         setActiveTab(index);
         setIsToggleSubmenu(!isToggleSubmenu);

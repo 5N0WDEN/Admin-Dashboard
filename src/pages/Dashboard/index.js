@@ -11,19 +11,16 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useState } from "react";
 import { IoIosTimer } from "react-icons/io";
 import { Chart } from "react-google-charts";
+import MdDarkMode from "react-icons/md";
 
-import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 
 import { FaEye } from "react-icons/fa";
 import { FaPencilAlt } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
 import Pagination from '@mui/material/Pagination';
-
 
 
 
@@ -71,7 +68,7 @@ const Dashboard = () =>{
                         <div className="box graphBox">
                             <div className="d-flex align-items-center w-100 bottomEle">
                                 <h6 className="text-white mb-0 mt-0">Total Sales</h6>
-                                <Button className="ml-auto toggleIcon">
+                                <div className="ml-auto toggleIcon">
                                     <div>
                                         <IconButton
                                             aria-label="more"
@@ -114,9 +111,8 @@ const Dashboard = () =>{
                                             </MenuItem> 
                                         </Menu>
                                     </div>
-                                </Button>
+                                </div>
                             </div>
-
                             <h3 className="text-white font-weight-bold">$3,787,681.00</h3>
                             <p>$3,578.90 in last month</p>
                             <Chart
@@ -135,7 +131,7 @@ const Dashboard = () =>{
                     <h3 className="hd">Best Selling Products</h3>
 
                     <div className="row cardFilters mt-3">
-                        <div className="col-md-3">
+                        <div className="col-md-3" id='showby'>
                             <h4>SHOW BY</h4> 
                             <FormControl size="small" className="w-100">
                             <Select
@@ -164,6 +160,7 @@ const Dashboard = () =>{
                             displayEmpty
                             inputProps={{ 'aria-label': 'Without label' }}
                             className="w-100"
+                            id='categoryby'
                             >
                             <MenuItem value="">
                                 <em>None</em>
@@ -201,11 +198,11 @@ const Dashboard = () =>{
                                         <div className="d-flex align-items-center productBox">
                                             <div className="imageWrapper">
                                                 <div className="img">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp"
-                                                    className="w-100"/>
+                                                    <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/6/a6d9230IW932_1.jpg"
+                                                    className="w-100" alt='womans wear'/>
                                                 </div>
                                             </div>
-                                            <div className="info pl-0">
+                                            <div className="info pl-3">
                                                 <h6>Tops and skirt set for Female...</h6>
                                                 <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
                                             </div>
@@ -238,11 +235,11 @@ const Dashboard = () =>{
                                         <div className="d-flex align-items-center productBox">
                                             <div className="imageWrapper">
                                                 <div className="img">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp"
-                                                    className="w-100"/>
+                                                    <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/6/a6d9230IW932_1.jpg"
+                                                    className="w-100" alt='womans wear'/>
                                                 </div>
                                             </div>
-                                            <div className="info pl-0">
+                                            <div className="info pl-3">
                                                 <h6>Tops and skirt set for Female...</h6>
                                                 <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
                                             </div>
@@ -275,11 +272,11 @@ const Dashboard = () =>{
                                         <div className="d-flex align-items-center productBox">
                                             <div className="imageWrapper">
                                                 <div className="img">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp"
-                                                    className="w-100"/>
+                                                    <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/6/a6d9230IW932_1.jpg"
+                                                    className="w-100" alt='womans wear'/>
                                                 </div>
                                             </div>
-                                            <div className="info pl-0">
+                                            <div className="info pl-3">
                                                 <h6>Tops and skirt set for Female...</h6>
                                                 <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
                                             </div>
@@ -312,11 +309,11 @@ const Dashboard = () =>{
                                         <div className="d-flex align-items-center productBox">
                                             <div className="imageWrapper">
                                                 <div className="img">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp"
-                                                    className="w-100"/>
+                                                    <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/6/a6d9230IW932_1.jpg"
+                                                    className="w-100" alt='womans wear'/>
                                                 </div>
                                             </div>
-                                            <div className="info pl-0">
+                                            <div className="info pl-3">
                                                 <h6>Tops and skirt set for Female...</h6>
                                                 <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
                                             </div>
@@ -349,11 +346,11 @@ const Dashboard = () =>{
                                         <div className="d-flex align-items-center productBox">
                                             <div className="imageWrapper">
                                                 <div className="img">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp"
-                                                    className="w-100"/>
+                                                    <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/6/a6d9230IW932_1.jpg"
+                                                    className="w-100" alt='womans wear'/>
                                                 </div>
                                             </div>
-                                            <div className="info pl-0">
+                                            <div className="info pl-3">
                                                 <h6>Tops and skirt set for Female...</h6>
                                                 <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
                                             </div>
@@ -386,11 +383,11 @@ const Dashboard = () =>{
                                         <div className="d-flex align-items-center productBox">
                                             <div className="imageWrapper">
                                                 <div className="img">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp"
-                                                    className="w-100"/>
+                                                    <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/6/a6d9230IW932_1.jpg"
+                                                    className="w-100" alt='womans wear'/>
                                                 </div>
                                             </div>
-                                            <div className="info pl-0">
+                                            <div className="info pl-3">
                                                 <h6>Tops and skirt set for Female...</h6>
                                                 <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
                                             </div>
@@ -423,11 +420,11 @@ const Dashboard = () =>{
                                         <div className="d-flex align-items-center productBox">
                                             <div className="imageWrapper">
                                                 <div className="img">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp"
-                                                    className="w-100"/>
+                                                    <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/6/a6d9230IW932_1.jpg"
+                                                    className="w-100" alt='womans wear'/>
                                                 </div>
                                             </div>
-                                            <div className="info pl-0">
+                                            <div className="info pl-3">
                                                 <h6>Tops and skirt set for Female...</h6>
                                                 <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
                                             </div>
@@ -460,11 +457,11 @@ const Dashboard = () =>{
                                         <div className="d-flex align-items-center productBox">
                                             <div className="imageWrapper">
                                                 <div className="img">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp"
-                                                    className="w-100"/>
+                                                    <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/6/a6d9230IW932_1.jpg"
+                                                    className="w-100" alt="product"/>
                                                 </div>
                                             </div>
-                                            <div className="info pl-0">
+                                            <div className="info pl-3">
                                                 <h6>Tops and skirt set for Female...</h6>
                                                 <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
                                             </div>
@@ -494,6 +491,7 @@ const Dashboard = () =>{
                         </table>
 
                         <div className="d-flex tableFooter">
+                            <p>showing <b>10</b> of <b>60</b> results</p>
                             <Pagination count={10} color="primary" className="pagination" 
                             showFirstButton showLastButton/>
                         </div>

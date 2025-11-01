@@ -2,7 +2,7 @@
 
 *{margin: 0px; padding: 0px;}
 
-body{font-family: "Open Sans", sans-serif !important; background: #ebebeb;}
+body{font-family: "Open Sans", sans-serif !important; background: #ebebeb; overflow-x: hidden;}
 
 ::-webkit-scrollbar{width: 5px !important; height: 5px !important;}
 ::-webkit-scrollbar-thumb{background: #0858f7 !important;}
@@ -63,9 +63,15 @@ line-height: 20px; margin-top: 0px; margin-bottom: 0px;}
 
 .dropdown_list .scroll{max-height: 300px; overflow-y: scroll; overflow-x: hidden;}
 
-.main .sidebarWrapper{width: 20%; flex: 0 0 20%; transition: all 0.3s ease-in-out;}
+.main .sidebarWrapper{width: 20%; flex: 0 0 20%; transition: all 0.3s;}
+
+.main .sidebarWrapper.toggle{width: 0%; flex: 0 0 0%;}
+
 .main .sidebarWrapper .sidebar{width: 20%; height: 100vh; max-height: 100vh; position: fixed; top: 70px;
-left: 0px; background: #fff; overflow-y: scroll; overflow-x: hidden; padding-bottom: 100px;}
+left: 0px; background: #fff; overflow-y: scroll; overflow-x: hidden; padding-bottom: 100px;
+transition: all 0.3s;}
+
+.main .sidebarWrapper.toggle .sidebar{left: -100%;}
 
 .main .sidebarWrapper .sidebar::-webkit-scrollbar{width: 3px;}
 .main .sidebarWrapper .sidebar::-webkit-scrollbar-thumb{background: transparent !important;}
@@ -121,9 +127,11 @@ border-radius: 100%; position: absolute; top: 20px; left: 10px; opacity: 0.5;}
 .logoutWrapper .logoutBox button{font-size: 14px !important; font-weight: 600 !important;}
 .logoutWrapper .logoutBox button svg{margin-right: 5px; font-size: 18px !important;}
 
-.main .content{width: 80%; flex: 0 0 80%;}
+.main .content{width: 80%; flex: 0 0 80%; transition: all 0.3s;}
 
-.right-content{padding: 90px 30px;}
+.main .content.toggle{width: 100%; flex: 0 0 100%;}
+
+.right-content{padding: 90px 30px; padding-bottom: 10px;}
 
 .dashboardBoxWrapper{gap:15px; width: 100%; flex-wrap: wrap;}
 .dashboardBoxWrapper .dashboardBox{width: 48%; height: 170px; border-radius: 10px;
@@ -174,6 +182,8 @@ color: #403e57;}
 
 h1, h2, h3, h4, h5, h6, p{color: #403e57;}
 
+.table-responsive::-webkit-scrollbar-thumb{background: #ccc !important;}
+
 .table .thead-dark th{background: #1866ee !important; border-color: rgba(255, 255, 255, 0.1) !important;
 font-size: 15px !important;}
 .table tbody td{font-size: 14px !important; color: #2f2d3e; font-weight: 500; padding: 10px 10px;}
@@ -194,7 +204,7 @@ table.v-align td{vertical-align: middle;}
 table td .info h6{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px;
 font-weight: 600; margin-bottom: 0px;}
 
-table td .imageWrapper{width: 20%; flex: 0 0 20%;}
+table td .imageWrapper{height: 55px; width: 20%; flex: 0 0 20%; border-radius: 5%; overflow: hidden;}
 table td .info{width: 65%; flex: 0 0 65%}
 table td .info p{overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px;
 line-height: 18px; color: 5e5d72; margin-bottom: 0px;}
@@ -203,5 +213,7 @@ table td .productBox{width: 270px;}
 
 .tableFooter{padding-bottom: 20px;}
 .tableFooter .pagination{margin-left: auto;}
+
+.tableFooter p{font-size: 14px; font-weight: 500; margin-bottom: 0px;}
 
 .css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{background-color: #0858f7 !important;}

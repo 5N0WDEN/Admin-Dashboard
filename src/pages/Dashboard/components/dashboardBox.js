@@ -1,5 +1,4 @@
 
-import Button from '@mui/material/Button';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import IconButton from '@mui/material/IconButton';
@@ -8,6 +7,8 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useState } from "react";
 import { IoIosTimer } from "react-icons/io";
+
+import CardActionArea from '@mui/material/CardActionArea';
 
 
 const DashboardBox = (props) =>{
@@ -25,8 +26,8 @@ const DashboardBox = (props) =>{
 
     return (
         <>
-            <Button className="dashboardBox" style={{
-                backgroundImage: `linear-gradient(to right, ${props.color?.[0]}, ${props.color?.[1]})`
+            <CardActionArea className="dashboardBox" style={{
+            backgroundImage: `linear-gradient(to right, ${props.color?.[0]}, ${props.color?.[1]})`
             }}>
                 {
                     props.grow ? 
@@ -57,7 +58,7 @@ const DashboardBox = (props) =>{
 
                 <div className="d-flex align-items-center w-100 bottomEle">
                     <h6 className="text-white mb-0 mt-0">Last Month</h6>
-                    <Button className="ml-auto toggleIcon">
+                    <div className="ml-auto toggleIcon">
                         <div>
                             <IconButton
                                 aria-label="more"
@@ -100,9 +101,9 @@ const DashboardBox = (props) =>{
                                 </MenuItem> 
                             </Menu>
                         </div>
-                    </Button>
+                    </div>
                 </div>
-            </Button>
+            </CardActionArea>
         </>
     )
 
